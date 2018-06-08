@@ -1,5 +1,20 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<div class='container' ng-controller="View2Ctrl">
+
+  <h2>Comics list</h2>
+  <span><i class="fas fa-shopping-cart"></i></span>
+  
+  <div class='comics'>
+    
+    <div class="card" style="width: 18rem;" ng-repeat="comic in comics">
+      <img class="card-img-top" ng-src="{{comic.image}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{comic.title}}</h5>
+        <p class="card-text">{{comic.description | limitTo: limitText}}{{comic.description.length > limitText ? '...' : ''}}</p>
+        <p class="card-price">{{comic.price | currency }}</p>
+        <a href="#" class="btn btn-primary"><i class="fas fa-shopping-cart"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+</div>
