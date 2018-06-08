@@ -1,7 +1,8 @@
-<div class='container' ng-controller="View2Ctrl">
+<div class='container' ng-controller="View2Ctrl" >
 
   <h2>Comics list</h2>
-  <span><i class="fas fa-shopping-cart"></i></span>
+
+  <cart-button value='cart.length'></cart-button>
   
   <div class='comics'>
     
@@ -11,7 +12,9 @@
         <h5 class="card-title">{{comic.title}}</h5>
         <p class="card-text">{{comic.description | limitTo: limitText}}{{comic.description.length > limitText ? '...' : ''}}</p>
         <p class="card-price">{{comic.price | currency }}</p>
-        <a href="#" class="btn btn-primary"><i class="fas fa-shopping-cart"></i></a>
+        <button ng-click='addToCart(comic)' class="btn btn-primary">
+          <i class="fas fa-shopping-cart"></i>
+        </button>
       </div>
     </div>
 

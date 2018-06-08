@@ -16,8 +16,8 @@ angular.module('myApp.view3', ['ngRoute'])
     url: 'https://swapi.co/api/people/?page=1'
   }).then(function successCallback(response) {
       $scope.peoples = response.data
-      console.log('response', response.data)
-      console.log('peoples', $scope.peoples)
+      // console.log('response', response.data)
+      // console.log('peoples', $scope.peoples)
     }, function errorCallback(response) {
       console.log(response.error)
     });

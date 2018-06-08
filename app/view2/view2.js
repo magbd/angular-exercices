@@ -11,6 +11,7 @@ angular.module('myApp.view2', ['ngRoute'])
 
 .controller('View2Ctrl', ['$scope', function($scope) {
   $scope.limitText = 100;
+  $scope.cart = []
   $scope.comics = [
     {
       "id": 0,
@@ -49,7 +50,12 @@ angular.module('myApp.view2', ['ngRoute'])
     }
   ]
 
-  
+  $scope.addToCart = (comic) => {
+    $scope.cart.push(comic)
+    console.log('cart',$scope.cart)
+  }
+
+
 }]);
 
 // export default {
