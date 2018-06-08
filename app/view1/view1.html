@@ -1,1 +1,23 @@
-<p>This is the partial for view 1.</p>
+<div class='container' ng-controller="View1Ctrl">
+
+  <h2>Todo list</h2>
+  
+  <form name='frm' ng-submit='addTodo()' class="input-group mb-3">
+    <input type="text" name='newTodo' ng-model='newTodo' class="form-control" placeholder="Add new task" required>
+    <div class="input-group-append">
+      <button ng-disabled='frm.$invalid' class="btn btn-outline-secondary">
+        <i class='fa fa-plus'></i>
+      </button>
+    </div>
+  </form>
+
+  <button ng-click='clearCompleted()' class="btn btn-secondary">Clear completed</button>
+
+  <ul>
+    <li ng-repeat='todo in todos'>
+        <input type="checkbox" ng-model='todo.done'>
+        <span ng-class="{'done': todo.done}">{{todo.title}}</span>
+    </li>
+  </ul>
+
+</div>
