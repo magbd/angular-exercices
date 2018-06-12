@@ -1,0 +1,15 @@
+<div class='container'>
+
+  <div class='detail'>
+    <img class="detail-image" ng-src="{{detail.image}}" alt="Card image cap">
+    <div class="detail-body">
+      <h5 class="detail-title">{{detail.title}}</h5>
+      <p class="detail-text">{{detail.description | limitTo: limitText}}{{detail.description.length > limitText ? '...' : ''}}</p>
+      <p class="detail-price">{{detail.price | currency }}</p>
+      <button ng-click='getCart()' class="btn btn-primary">
+        <i class="fas fa-shopping-cart"></i>
+      </button>
+    </div>
+  </div>
+    <a href="#!/view2" class="btn btn-light">Revenir à la liste</a>
+</div>

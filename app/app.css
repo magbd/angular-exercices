@@ -40,3 +40,16 @@
   text-decoration: line-through;
   color: #ccc;
 }
+
+.detail {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.detail-image {
+  height: 500px;
+}
+
+.detail-body {
+  margin-left: 10px;
+}

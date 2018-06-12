@@ -5,12 +5,12 @@ angular.module('myApp.view2')
 .component('cartButton', {
   templateUrl: 'view2/cartButton/cart.button.component.html',
   controller: cartButtonController,
-  controllerAs: 'ctrl',
+  controllerAs: 'cartButtonCtrl',
   bindings: {
-    value: '<'
+    cart: '<'
   }
 })
 
 function cartButtonController() {
-  // console.log(this.value)
+  console.log('[cart data from button component]', this.cart)
 }

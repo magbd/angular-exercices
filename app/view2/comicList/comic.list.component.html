@@ -1,18 +1,21 @@
-<div class='container' ng-controller="View2Ctrl" >
+<div class='container'>
 
   <h2>Comics list</h2>
 
-  <cart-button value='cart.length'></cart-button>
+  <!-- <cart-button cart='cart'></cart-button> -->
+  <div>Counter {{counter}}</div>
   
   <div class='comics'>
     
     <div class="card" style="width: 18rem;" ng-repeat="comic in comics">
-      <img class="card-img-top" ng-src="{{comic.image}}" alt="Card image cap">
+      <a ng-href="#!/view2/detail/{{comic.id}}">
+        <img class="card-img-top" ng-src="{{comic.image}}" alt="Card image cap">
+      </a>
       <div class="card-body">
         <h5 class="card-title">{{comic.title}}</h5>
         <p class="card-text">{{comic.description | limitTo: limitText}}{{comic.description.length > limitText ? '...' : ''}}</p>
         <p class="card-price">{{comic.price | currency }}</p>
-        <button ng-click='addToCart(comic)' class="btn btn-primary">
+        <button ng-click='getCart()' class="btn btn-primary">
           <i class="fas fa-shopping-cart"></i>
         </button>
       </div>
