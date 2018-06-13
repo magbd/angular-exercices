@@ -6,7 +6,7 @@
       <h5 class="detail-title">{{detail.title}}</h5>
       <p class="detail-text">{{detail.description | limitTo: limitText}}{{detail.description.length > limitText ? '...' : ''}}</p>
       <p class="detail-price">{{detail.price | currency }}</p>
-      <button ng-click='getCart()' class="btn btn-primary">
+      <button ng-click='addItem(detail)' class="btn btn-primary">
         <i class="fas fa-shopping-cart"></i>
       </button>
     </div>

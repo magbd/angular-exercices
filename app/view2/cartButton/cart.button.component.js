@@ -11,6 +11,8 @@ angular.module('myApp.view2')
   }
 })
 
-function cartButtonController() {
-  console.log('[cart data from button component]', this.cart)
+cartButtonController.$inject = ['comicsService' ,'$scope']
+function cartButtonController(comicsService, $scope) {
+  // console.log('[cart data from button component]', this.cart)
 }
+

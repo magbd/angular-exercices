@@ -2,8 +2,8 @@
 
   <h2>Comics list</h2>
 
-  <!-- <cart-button cart='cart'></cart-button> -->
-  <div>Counter {{counter}}</div>
+  <cart-button cart='cart'></cart-button>
+  <!-- <div>cart items {{cart.length}}</div> -->
   
   <div class='comics'>
     
@@ -15,7 +15,7 @@
         <h5 class="card-title">{{comic.title}}</h5>
         <p class="card-text">{{comic.description | limitTo: limitText}}{{comic.description.length > limitText ? '...' : ''}}</p>
         <p class="card-price">{{comic.price | currency }}</p>
-        <button ng-click='getCart()' class="btn btn-primary">
+        <button ng-click='addItem(comic)' class="btn btn-primary">
           <i class="fas fa-shopping-cart"></i>
         </button>
       </div>

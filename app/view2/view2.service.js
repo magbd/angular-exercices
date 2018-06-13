@@ -8,16 +8,17 @@
     .factory('comicsService', comicsService);
 
     function comicsService() {
-
       
+      var cart = []
 
       var service = {
         list: list,
+        cart: getCart,
         addToCart: addToCart,
+        removeToCart: removeToCart,
         getById: getById
       };
 
-      return service;
       
       function list() {
         var mockComics = [
@@ -66,21 +67,39 @@
       return comic
     }
 
-
-
-    // function cart() {
-
-    // }
-
-    function addToCart() {
-      // var cart = []
-      // cart.push(comic)
-      // return cart
-      var counter = 0
-      counter++
-      console.log(counter)
-      return counter
+    function getCart() {
+      return cart
     }
+
+    function addToCart(comic) {
+      if (cart.length === 0) {
+        cart.push({id: comic.id, count: 1, comic: comic})
+      }
+      else {
+        var repeat = false
+        cart.map((item, index) => {
+          if (item.id === comic.id) {
+            repeat = true
+            cart[index].count +=1
+          }
+        })
+        if (!repeat) {
+          cart.push({id: comic.id, count: 1, comic: comic})
+        }
+      }
+    }
+
+    function removeToCart(cartItem) {
+      if (cartItem.count > 1 ) {
+        cartItem.count -= 1
+      }
+      else if (cartItem.count === 1) {
+        var index = cart.indexOf(cartItem)
+        cart.splice(index, 1)
+      }
+    }
+
+    return service;
 
   }
 

@@ -13,5 +13,5 @@ comicDetailController.$inject = ['comicsService', '$scope', '$routeParams']
 function comicDetailController(comicsService, $scope, $routeParams) {
 
   $scope.detail = comicsService.getById($routeParams.id)[0]
-  console.log($scope.detail.title)
+  $scope.addItem = (comic) => comicsService.addToCart(comic) 
 }

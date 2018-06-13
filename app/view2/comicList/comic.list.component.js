@@ -17,21 +17,9 @@ function comicListController(comicsService, $scope) {
 
   $scope.comics = comicsService.list()
   $scope.counter = 0
+  $scope.cart = comicsService.cart()
+  $scope.addItem = (comic) => comicsService.addToCart(comic) 
 
-  $scope.getCart = function () {
-    return comicsService.addToCart()
-  }
-  // $scope.cart = comicsService.addToCart()
-
-  // $scope.addToCart = () => {
-  //   $scope.counter++
-  //   console.log($scope.counter)
-  // }
-  // this.test = comicsService.addToCart()
-
-  // this.addToCart = (comic) => {
-  //   this.cart.push(comic)
-  //   // console.log('cart',$scope.cart)
-  // }
+  console.log($scope.cart)
 
 }

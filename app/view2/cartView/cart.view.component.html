@@ -1,1 +1,20 @@
-<div>CART VIEW</div>
+<div class='container'>
+  
+    <h2>Cart</h2>
+
+    <ul class='list-group'>
+      <li ng-repeat='c in cart'>
+        <h4>{{c.comic.title}}</h4>
+        
+        <span>Amount : {{c.comic.price*c.count | currency}}</span>
+        <div>
+          <button class="btn btn-success" ng-click='addItem(c.comic)'>+</button>
+          <span>{{c.count}}</span>
+          <button class="btn btn-danger" ng-click='removeItem(c)'>-</button>
+        </div>
+      </li>
+    </ul>
+
+    Total :
+
+</div>
