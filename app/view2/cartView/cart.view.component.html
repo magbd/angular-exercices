@@ -3,18 +3,20 @@
     <h2>Cart</h2>
 
     <ul class='list-group'>
-      <li ng-repeat='c in cart'>
-        <h4>{{c.comic.title}}</h4>
-        
-        <span>Amount : {{c.comic.price*c.count | currency}}</span>
-        <div>
-          <button class="btn btn-success" ng-click='addItem(c.comic)'>+</button>
-          <span>{{c.count}}</span>
-          <button class="btn btn-danger" ng-click='removeItem(c)'>-</button>
+      <li class='product' ng-repeat='product in cart'>
+        <img ng-src="{{product.comic.image}}">
+        <div class='product-body'>
+          <h4>{{product.comic.title}}</h4>
+          <span class='product-price'>{{product.comic.price*product.count | currency}}</span>
+          <div class='product-quantity'>
+            <button class="btn btn-success" ng-click='addItem(product.comic)'>+</button>
+            <span>{{product.count}}</span>
+            <button class="btn btn-danger" ng-click='removeItem(product)'>-</button>
+          </div>
         </div>
       </li>
     </ul>
 
-    Total :
+    <h5 class='total'>Total : {{service.getTotalAmount() | currency}}</h5>
 
 </div>

@@ -7,12 +7,10 @@ angular.module('myApp.view2')
   controller: cartButtonController,
   controllerAs: 'cartButtonCtrl',
   bindings: {
-    cart: '<'
+    count: '<'
   }
 })
 
 cartButtonController.$inject = ['comicsService' ,'$scope']
-function cartButtonController(comicsService, $scope) {
-  // console.log('[cart data from button component]', this.cart)
-}
+function cartButtonController(comicsService, $scope) {}
 

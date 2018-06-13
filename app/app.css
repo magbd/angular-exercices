@@ -28,6 +28,18 @@
   width: 80%;
 }
 
+/* ---
+TODO LIST
+--- */
+.done {
+  text-decoration: line-through;
+  color: #ccc;
+}
+
+/* ---
+Comics list
+--- */
+
 .comics {
   display: flex;
 }
@@ -36,10 +48,9 @@
   margin: 5px;
 }
 
-.done {
-  text-decoration: line-through;
-  color: #ccc;
-}
+/* ---
+Detail view
+--- */
 
 .detail {
   display: flex;
@@ -52,4 +63,41 @@
 
 .detail-body {
   margin-left: 10px;
+}
+
+/* ---
+Cart view
+--- */
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.product {
+  display: flex;
+  padding: 10px;
+  border-bottom: solid 1px grey;
+}
+
+.product img {
+  height: 100px;
+}
+
+.product-body {
+  display: column;
+  margin-left: 20px;
+}
+
+.product-price {
+  margin-bottom: 10px;
+}
+
+.product-quantity span{
+  margin: 0 10px;
+}
+
+.total {
+  text-align: right;
 }

@@ -2,9 +2,8 @@
 
   <h2>Comics list</h2>
 
-  <cart-button cart='cart'></cart-button>
-  <!-- <div>cart items {{cart.length}}</div> -->
-  
+  <cart-button count='cart.length'></cart-button>
+  <!-- <div>{{cart}}</div> -->
   <div class='comics'>
     
     <div class="card" style="width: 18rem;" ng-repeat="comic in comics">

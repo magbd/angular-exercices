@@ -10,12 +10,14 @@
     function comicsService() {
       
       var cart = []
+      var totalAmount = 0
 
       var service = {
         list: list,
         cart: getCart,
         addToCart: addToCart,
         removeToCart: removeToCart,
+        getTotalAmount: getTotalAmount,
         getById: getById
       };
 
@@ -71,6 +73,10 @@
       return cart
     }
 
+    function getTotalAmount() {
+      return totalAmount
+    }
+
     function addToCart(comic) {
       if (cart.length === 0) {
         cart.push({id: comic.id, count: 1, comic: comic})
@@ -80,13 +86,14 @@
         cart.map((item, index) => {
           if (item.id === comic.id) {
             repeat = true
-            cart[index].count +=1
+            cart[index].count ++
           }
         })
         if (!repeat) {
           cart.push({id: comic.id, count: 1, comic: comic})
         }
       }
+      totalAmount = getTotalAmount() + comic.price
     }
 
     function removeToCart(cartItem) {
@@ -97,8 +104,9 @@
         var index = cart.indexOf(cartItem)
         cart.splice(index, 1)
       }
+      totalAmount = getTotalAmount() - cartItem.comic.price
     }
-
+    
     return service;
 
   }
