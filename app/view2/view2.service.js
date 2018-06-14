@@ -10,6 +10,7 @@
     function comicsService() {
       
       var cart = []
+      var cartItems = 0
       var totalAmount = 0
 
       var service = {
@@ -18,6 +19,7 @@
         addToCart: addToCart,
         removeToCart: removeToCart,
         getTotalAmount: getTotalAmount,
+        getTotalCartItems: getTotalCartItems,
         getById: getById
       };
 
@@ -74,7 +76,12 @@
     }
 
     function getTotalAmount() {
+      console.log('getTotalAmount', totalAmount)
       return totalAmount
+    }
+
+    function getTotalCartItems() {
+      return cartItems
     }
 
     function addToCart(comic) {
@@ -93,7 +100,9 @@
           cart.push({id: comic.id, count: 1, comic: comic})
         }
       }
+      cartItems ++
       totalAmount = getTotalAmount() + comic.price
+      console.log(totalAmount)
     }
 
     function removeToCart(cartItem) {
@@ -104,7 +113,9 @@
         var index = cart.indexOf(cartItem)
         cart.splice(index, 1)
       }
+      cartItems --
       totalAmount = getTotalAmount() - cartItem.comic.price
+      console.log(totalAmount)
     }
     
     return service;

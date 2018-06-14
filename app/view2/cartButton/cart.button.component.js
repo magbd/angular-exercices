@@ -6,11 +6,13 @@ angular.module('myApp.view2')
   templateUrl: 'view2/cartButton/cart.button.component.html',
   controller: cartButtonController,
   controllerAs: 'cartButtonCtrl',
-  bindings: {
-    count: '<'
-  }
+  // bindings: {
+  //   count: '<'
+  // }
 })
 
 cartButtonController.$inject = ['comicsService' ,'$scope']
-function cartButtonController(comicsService, $scope) {}
+function cartButtonController(comicsService, $scope) {
+  $scope.service = comicsService;
+}
 

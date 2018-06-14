@@ -3,7 +3,8 @@
   <h2>Comics list</h2>
 
   <cart-button count='cart.length'></cart-button>
-  <!-- <div>{{cart}}</div> -->
+  <!-- <div>{{cart}}</div>
+  <div>{{total}}</div> -->
   <div class='comics'>
     
     <div class="card" style="width: 18rem;" ng-repeat="comic in comics">
@@ -16,6 +17,10 @@
         <p class="card-price">{{comic.price | currency }}</p>
         <button ng-click='addItem(comic)' class="btn btn-primary">
           <i class="fas fa-shopping-cart"></i>
+        </button>
+
+        <button ng-click='changeTotal()' class="btn btn-primary">
+          <i class="fas fa-plus"></i>
         </button>
       </div>
     </div>
